@@ -1,0 +1,28 @@
+/* https://www.materialpalette.com/ */
+:root {
+    --mat-red: #D32F2F;
+    --mat-pink: #FF4081;
+    --mat-purple: #7B1FA2;
+    --mat-deeppurple: #7C4DFF;
+    --mat-indigo: #303F9F;
+    --mat-blue: #448AFF;
+    --mat-lightblue: #0288D1;
+    --mat-cyan: #00BCD4;
+    --mat-teal: #00796B;
+    --mat-green: #4CAF50;
+    --mat-lightgreen: #689F38;
+    --mat-lime: #CDDC39;
+    --mat-yellow: #FBC02D;
+    --mat-amber: #FFC107;
+    --mat-orange: #F57C00;
+    --mat-deeporgange: #FF5722;
+    --mat-brown: #5D4037;
+    --mat-grey: #9E9E9E;
+    --mat-bluegrey: #455A64;
+    
+    --mat-white: #FFFFFF;
+    --mat-black: #212121;
+
+    --mat-primary: var(--mat-indigo);
+    --mat-secondary: var(--mat-lightblue);
+}

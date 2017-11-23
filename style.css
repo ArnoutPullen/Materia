@@ -1,0 +1,67 @@
+/*
+
+Theme Name: Materia
+Theme URI: https://materia.arnoutpullen.nl/
+Author: Arnout Pullen
+Author URI: https://www.arnoutpullen.nl/
+Description: An immensely powerful and endlessly customizable WordPress theme.
+Version: 1.0.0
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: materia
+
+*/
+
+@import url("./framework/css/variables.css");
+@import url("./framework/css/sidenav.css");
+@import url("./framework/css/card.css");
+@import url("./framework/css/buttons.css");
+
+/* Body */
+body {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Spacer */
+.mat-spacer {
+    flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1; 
+}
+/* Toolbar */
+.mat-toolbar {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 64px;
+    color: var(--mat-white);
+    background-color: var(--mat-primary);
+    padding: 0 16px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+/* Content */
+.mat-content {
+    margin: 2em;
+}
+/* Ripple Effect */
+.mat-ripple {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    opacity: 1;
+}
+.mat-ripple-effect {
+    animation: ripple .5s linear;
+}
+@keyframes ripple {
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+}

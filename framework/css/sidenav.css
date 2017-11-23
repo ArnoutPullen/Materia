@@ -1,0 +1,108 @@
+.mat-sidenav-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.mat-sidenav-container .mat-sidenav {
+  position: fixed;
+  background-color: var(--mat-white);
+  z-index: 1;
+  display: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.14);
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li {
+  position: relative;
+  height: 64px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li a {
+  display: block;
+  padding: 20px;
+  color: var(--mat-black);
+  text-decoration: none;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:before,
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:after {
+  position: absolute;
+  top: 20px;
+  color: var(--mat-black);
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:before {
+  display: none;
+  left: 20px;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:after {
+  right: 20px;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:hover,
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:hover a,
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:hover:before,
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li:hover:after {
+  background-color: var(--mat-primary);
+  color: var(--mat-white);
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li .sub-menu {
+  display: none;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block > ul > li.menu-item-has-children:after {
+  content: "\f078";
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-list ul li a {
+  display: block;
+  padding: 15px 0 15px 22px;
+  color: var(--mat-black);
+  font-weight: 700;
+  text-decoration: none;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-list ul li .sub-menu li a {
+  font-weight: 400;
+  padding: 10px 10px 10px 46px;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-left,
+.mat-sidenav-container .mat-sidenav.mat-sidenav-right {
+  top: 32px;
+  bottom: 0;
+  min-width: 300px;
+  width: 30vw;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-left {
+  left: 0;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-right {
+  right: 0;
+}
+.mat-sidenav-container .mat-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: -1;
+  display: none;
+}
+.mat-active.mat-sidenav-container {
+  z-index: 20;
+}
+.mat-active.mat-sidenav-container .mat-overlay {
+  z-index: 1;
+  opacity: 1;
+}
+@media (max-width: 781px) {
+  .mat-sidenav {
+    top: 46px;
+  }
+}
