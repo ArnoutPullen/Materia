@@ -1,5 +1,4 @@
 <?php
-include( get_template_directory() . '/framework/functions/materia.php' );
 
 render_materia_view('header');
 

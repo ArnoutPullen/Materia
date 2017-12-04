@@ -20,8 +20,14 @@ Text Domain: materia
 /* Body */
 body {
     font-family: Roboto,"Helvetica Neue",sans-serif;
+    background-color: #e8e8e8;
     margin: 0;
     padding: 0;
+}
+/* Site Titel */
+.mat-site-title {
+    text-decoration: none;
+    color: white;
 }
 /* Spacer */
 .mat-spacer {
@@ -43,8 +49,12 @@ body {
     font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 /* Content */
-.mat-content {
+.mat-body {
     margin: 2em;
+}
+.mat-content {
+    padding: 2em;
+    background-color: var(--mat-white);
 }
 /* Ripple Effect */
 .mat-ripple {
@@ -64,4 +74,41 @@ body {
       transform: scale(4);
       opacity: 0;
     }
+}
+
+
+.mat-user {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+}
+
+span.mat-user-image, span.mat-user-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+span.mat-user-name {
+    line-height: 50px;
+}
+
+.spacer {
+    display: flex;
+    flex: 1;
+}
+
+.mat-sidenav {
+    display: flex;
+    flex-direction: column;
+}
+
+span.mat-user-image {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-headmenu-container {
+    display: flex;
+    flex-direction: column;
 }

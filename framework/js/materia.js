@@ -1,20 +1,9 @@
 jQuery(document).ready(function($) {
     // Menu Toggle
-    $("#mat-toggle-menu").click(function(){
+    $("#mat-toggle-menu").click(function() {
         matToggleMenu();
     });
-
-    // Menu Open If Click Outside Close Menu
-    // $(document).mouseup(function(e) {
-    //     if ($(".mat-sidenav").is(":visible")) {
-    //         var container = $(".mat-sidenav");
-            
-    //         if (!container.is(e.target) && container.has(e.target).length === 0) {
-    //             matToggleMenu();
-    //         }
-    //     }
-    // });
-    $(".mat-overlay").click(function(){
+    $(".mat-overlay").click(function() {
         if ($(".mat-sidenav").is(":visible")) {
             matToggleMenu();
         }
@@ -36,6 +25,14 @@ jQuery(document).ready(function($) {
     // Ripple Effect
     $('.mat-button').mousedown(function(event) {
         matRippleEffect($(this), event);
+    });
+
+    // Accordions
+
+    matAddAccordionIcons();
+
+    $('.accordion-header').on('click',function(event){
+        matAccordionToggle($(this));
     });
 });
 
@@ -65,19 +62,57 @@ function matRippleEffect(element, event) {
     
     setTimeout(function() { $('.mat-ripple').remove(); }, 1000);
 }
+
 function matToggleMenu() {
-    if ($(".mat-sidenav").is(":visible")) {
-        $(".mat-sidenav").css('margin-left', '0px');
-        $(".mat-sidenav").animate({"margin-left": '-=300'}, function(){
-            $(".mat-sidenav").hide();
-            $(".mat-overlay").hide();
-            $(".mat-sidenav-container").removeClass('mat-active');
-        });
+    // if ($(".mat-sidenav").is(":visible")) {
+        // console.log('close');
+        // $(".mat-sidenav").css('left', '0px');
+        // $(".mat-sidenav").animate({"left": '-=300'}, function() {
+        //     $(".mat-sidenav").css('visibility','hidden');
+        //     $(".mat-overlay").css('visibility','hidden');
+        //     $(".mat-sidenav-container").removeClass('mat-active');
+        // });
+    // } else {
+        // opening animation
+        // console.log('open');
+        // $(".mat-sidenav").css('left', '-300px');
+        // $(".mat-sidenav").css('visibility','visible');
+        // $(".mat-overlay").css('visibility','visible');
+        // $(".mat-sidenav-container").addClass('mat-active');
+        // $(".mat-sidenav").animate({"left": '+=300'});
+    // }
+
+    // $(".mat-sidenav").toggleClass('mat-sidenav-opened');
+    // $(".mat-sidenav").toggleClass('mat-sidenav-closed');
+
+    if ( $(".mat-sidenav").hasClass("mat-sidenav-opened") ) {
+        console.log('close');
+        $(".mat-sidenav").removeClass('mat-sidenav-opened');
+        $(".mat-sidenav").addClass('mat-sidenav-closed');
+        $(".mat-sidenav-container").removeClass('mat-sidenav-open');
     } else {
-        $(".mat-sidenav").css('margin-left', '-300px');
-        $(".mat-sidenav").show();
-        $(".mat-overlay").show();
-        $(".mat-sidenav-container").addClass('mat-active');
-        $(".mat-sidenav").animate({"margin-left": '+=300'});
+        console.log('open');
+        $(".mat-sidenav").removeClass('mat-sidenav-closed');
+        $(".mat-sidenav").addClass('mat-sidenav-opened');
+        $(".mat-sidenav-container").addClass('mat-sidenav-open');
     }
+    // $({xyz: -100}).animate({xyz:100}, {duration:10000, complete:function(){
+    //     console.log("done");
+    // }, step: function(now) {
+    //     console.log("Anim now: "+now);
+    // }});
+}
+
+function matAddAccordionIcons() {
+    $(".accordion").each(function(){
+        $(".accordion-header", this).append('<i class="fa fa-chevron-down accordion-icon" aria-hidden="true"></i>');
+    });
+}
+function matAccordionToggle(element) {
+    $(".accordion").each(function() {
+        if ( ! $(element).closest('.accordion').hasClass('opened') ) {
+            $(this).removeClass('opened');
+        }
+    });
+    $(element).closest('.accordion').toggleClass('opened');
 }
