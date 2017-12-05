@@ -80,16 +80,35 @@ body {
 .mat-user {
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 50px;
+    border-top: 1px solid grey;
+    padding: 16px;
 }
 
-span.mat-user-image, span.mat-user-image img {
+.mat-user a {
+    color: var(--mat-black);
+    text-decoration: none;
+}
+
+.mat-user-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.mat-user-image img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 
-span.mat-user-name {
+.mat-user-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 16px;
     line-height: 50px;
 }
 
@@ -103,12 +122,14 @@ span.mat-user-name {
     flex-direction: column;
 }
 
-span.mat-user-image {
-    display: flex;
-    flex-direction: row;
-}
-
 .menu-headmenu-container {
     display: flex;
     flex-direction: column;
+}
+
+.mat-user-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }

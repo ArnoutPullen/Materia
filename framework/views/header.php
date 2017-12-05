@@ -23,11 +23,23 @@
 		<div class="mat-toolbar"><?php echo bloginfo();?></div>
 		<?php wp_nav_menu(); ?>
 		<div class="spacer"></div>
-		<div class="mat-user">
-			<?php $current_user = wp_get_current_user();
-				echo '<span class="mat-user-image">' . get_avatar( $current_user->ID ) . '</span><span class="mat-user-name">' . $current_user->display_name . '</span>';
-			?>
-		</div>
+		<?php if ( is_user_logged_in() ) { ?>
+			<div class="mat-user">
+				<?php $current_user = wp_get_current_user(); ?>
+				<span class="mat-user-image"><?php echo get_avatar( $current_user->ID ) ?></span>
+				<a href="<?php echo get_edit_user_link(); ?>">
+					<span class="mat-user-name"><?php echo $current_user->display_name ?></span>
+				</a>
+			</div>
+		<?php } else { ?>
+			<div class="mat-user">
+				<div class="mat-user-login">
+					<a href="<?php echo wp_login_url( get_permalink() ); ?>" title="Login">
+						<button class="mat-button mat-button-flat">Login</button>
+					</a>
+				</div>
+			</div>
+		<?php } ?>
 	</header>
 	<div class="mat-sidenav-content">
 		<div class="mat-toolbar">
