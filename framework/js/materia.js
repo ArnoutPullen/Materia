@@ -15,9 +15,9 @@ jQuery(document).ready(function($) {
         if ($(".mat-sidenav").is(":visible")) {
             
         }
-        $(this).css({
-            marginBottom: $(".sub-menu").height()
-        });
+        // $(this).css({
+        //     marginBottom: $(".sub-menu").height()
+        // });
         $(this).toggleClass('mat-open');
         $(".sub-menu").toggle();
     });
@@ -28,13 +28,16 @@ jQuery(document).ready(function($) {
     });
 
     // Accordions
-
     matAddAccordionIcons();
 
     $('.accordion-header').on('click',function(event){
         matAccordionToggle($(this));
     });
 });
+
+function matSubmenuToggle() {
+    
+}
 
 function matRippleEffect(element, event) {
     $('.mat-ripple').remove();
@@ -64,55 +67,30 @@ function matRippleEffect(element, event) {
 }
 
 function matToggleMenu() {
-    // if ($(".mat-sidenav").is(":visible")) {
-        // console.log('close');
-        // $(".mat-sidenav").css('left', '0px');
-        // $(".mat-sidenav").animate({"left": '-=300'}, function() {
-        //     $(".mat-sidenav").css('visibility','hidden');
-        //     $(".mat-overlay").css('visibility','hidden');
-        //     $(".mat-sidenav-container").removeClass('mat-active');
-        // });
-    // } else {
-        // opening animation
-        // console.log('open');
-        // $(".mat-sidenav").css('left', '-300px');
-        // $(".mat-sidenav").css('visibility','visible');
-        // $(".mat-overlay").css('visibility','visible');
-        // $(".mat-sidenav-container").addClass('mat-active');
-        // $(".mat-sidenav").animate({"left": '+=300'});
-    // }
+    // If opened then close else open
+    $(".mat-sidenav").toggleClass('mat-sidenav-closed');
+    $(".mat-sidenav").toggleClass('mat-sidenav-opened');
+    $(".mat-sidenav-container").toggleClass('mat-sidenav-open');
 
-    // $(".mat-sidenav").toggleClass('mat-sidenav-opened');
-    // $(".mat-sidenav").toggleClass('mat-sidenav-closed');
-
-    if ( $(".mat-sidenav").hasClass("mat-sidenav-opened") ) {
-        console.log('close');
-        $(".mat-sidenav").removeClass('mat-sidenav-opened');
-        $(".mat-sidenav").addClass('mat-sidenav-closed');
-        $(".mat-sidenav-container").removeClass('mat-sidenav-open');
-    } else {
-        console.log('open');
-        $(".mat-sidenav").removeClass('mat-sidenav-closed');
-        $(".mat-sidenav").addClass('mat-sidenav-opened');
-        $(".mat-sidenav-container").addClass('mat-sidenav-open');
-    }
-    // $({xyz: -100}).animate({xyz:100}, {duration:10000, complete:function(){
-    //     console.log("done");
-    // }, step: function(now) {
-    //     console.log("Anim now: "+now);
-    // }});
 }
 
 function matAddAccordionIcons() {
+    // Add accordion icon to each accordion
     $(".accordion").each(function(){
-        $(".accordion-header", this).append('<i class="fa fa-chevron-down accordion-icon" aria-hidden="true"></i>');
+        $(".accordion-header", this).append('<i class="fa accordion-icon" aria-hidden="true"></i>');
     });
 }
+
 function matAccordionToggle(element) {
+    accordion = $(element).closest('.accordion');
+
+    // Close opened accordions
     $(".accordion").each(function() {
-        if ( ! $(element).closest('.accordion').hasClass('opened') ) {
+        if ( ! $(accordion).hasClass('opened') ) {
             $(this).removeClass('opened');
         }
     });
-    $(element).closest('.accordion').toggleClass('opened');
+
+    // Open accordion
+    $(accordion).toggleClass('opened');
 }
