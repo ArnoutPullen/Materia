@@ -1,0 +1,27 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.spacer {
+  display: flex;
+  flex: 1;
+}
+.mat-spacer {
+  flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+}
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  .row .column {
+    flex-direction: row;
+  }
+}

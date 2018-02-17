@@ -4,19 +4,12 @@
     text-transform: uppercase;
     overflow: hidden;
     outline: none;
+    cursor: pointer;
     a {
         color: inherit;
         display: block;
     }
-    &.mat-icon-button {
-        width: 40px;
-        height: 40px;
-        color: var(--mat-white);
-        background-color: transparent;
-        border: 0;
-        border-radius: 50%;
-        cursor: pointer;
-    }
+    // Square button
     &.mat-button-raised,
     &.mat-button-flat {
         min-width: 64px;
@@ -27,16 +20,98 @@
         border-radius: 2px;
         text-transform: uppercase;
     }
+    // Raised
     &.mat-button-raised {
         background-color: var(--mat-primary);
         color: var(--mat-white);
     }
+    // Flat
     &.mat-button-flat {
         background-color: transparent;
         color: var(--mat-black);
     }
+    // FAB
+    &.mat-button-fab {
+        background-color: var(--mat-primary);
+        color: var(--mat-white);
+        height: 56px;
+        width: 56px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        z-index: 1;
+        box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    }
+    &.mat-button-fab .material-icons {
+        width: 24px;
+        height: 24px;
+        padding: 16px;
+    }
+    // Icon
+    &.mat-icon-button {
+        width: 40px;
+        height: 40px;
+        color: var(--mat-white);
+        background-color: transparent;
+        border: 0;
+        border-radius: 50%;
+        padding: 0;
+    }
+    &.mat-icon-button .material-icons {
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+    }
+    // Raised and fab
+    &.mat-button-raised,
+    &.mat-button-fab {
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+    &.mat-button-fab:active,
+    &.mat-button-raised:active {
+        box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    }
+    // Float buttons
+    // Ripple Effect
+    &.mat-ripple,
     &.mat-button-flat .mat-ripple {
         background-color: rgba(153, 153, 153, 0.4);
+        // background-color: rgba(0,0,0,.87);
+    }
+    // Mat Fab Button with 2 icons - Rotation Effect
+    &.mat-button-fab-rotation {
+        transition: transform 150ms cubic-bezier(.4, 0, 1, 1);
+        -webkit-transition: -webkit-transform 150ms cubic-bezier(.4, 0, 1, 1);
+        transform: scale(1) rotate(360deg);
+        -webkit-transform: scale(1) rotate(360deg);
+    }
+    &.mat-button-fab-rotation:hover {
+        transition: box-shadow 150ms cubic-bezier(0, 0, .2, 1);
+        -webkit-transition: box-shadow 150ms cubic-bezier(0, 0, .2, 1);
+        box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
+    }
+    &.mat-button-fab-rotation .material-icons {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 16px;
+        
+        transition: all .2s cubic-bezier(.4, 0, .2, 1);
+        -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1);
+    }
+    &.mat-button-fab-rotation .material-icons:first-child,
+    &.mat-button-fab-rotation:hover .material-icons:last-child {
+        transform: rotate(225deg);
+        -webkit-transform: rotate(225deg);
+        opacity: 0;
+    }
+    &.mat-button-fab-rotation:hover .material-icons:first-child {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        visibility: visible;
+        opacity: 1;
     }
 }
 

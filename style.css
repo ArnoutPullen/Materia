@@ -12,10 +12,16 @@ Text Domain: materia
 
 */
 
-@import url("./framework/css/variables.css");
-@import url("./framework/css/sidenav.css");
-@import url("./framework/css/card.css");
+
+@import url("./framework/css/accordions.css");
 @import url("./framework/css/buttons.css");
+@import url("./framework/css/cards.css");
+@import url("./framework/css/forms.css");
+@import url("./framework/css/input.css");
+@import url("./framework/css/layouts.css");
+@import url("./framework/css/sidenav.css");
+@import url("./framework/css/tables.css");
+@import url("./framework/css/variables.css");
 
 /* Body */
 body {
@@ -28,12 +34,6 @@ body {
 .mat-site-title {
     text-decoration: none;
     color: white;
-}
-/* Spacer */
-.mat-spacer {
-    flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    -webkit-box-flex: 1; 
 }
 /* Toolbar */
 .mat-toolbar {
@@ -56,6 +56,7 @@ body {
     padding: 2em;
     background-color: var(--mat-white);
 }
+
 /* Ripple Effect */
 .mat-ripple {
     position: absolute;
@@ -76,7 +77,7 @@ body {
     }
 }
 
-
+/* Sidenav */
 .mat-user {
     display: flex;
     flex-direction: row;
@@ -110,11 +111,6 @@ body {
     text-align: center;
     padding: 0 16px;
     line-height: 50px;
-}
-
-.spacer {
-    display: flex;
-    flex: 1;
 }
 
 .mat-sidenav {

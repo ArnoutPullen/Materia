@@ -1,0 +1,32 @@
+.table-header {
+    height: 64px;
+    line-height: 64px;
+    font-size: 20px;
+}
+table {
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+    border-spacing: unset;
+    border-collapse: unset;
+    tr {
+        height: 48px;
+        th {
+            color: #868686;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        td {
+            color: #212121;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        &:first-child {
+            height: 56px;
+        }
+        &:last-child {
+            height: 56px;
+            td {
+                border-bottom: none;
+            }
+        }
+    }
+}

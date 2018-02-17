@@ -42,9 +42,12 @@
 .mat-sidenav-container .mat-sidenav.mat-sidenav-closed {
   visibility: hidden;
 }
-.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.menu > li:hover,
-.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.menu > li:hover a .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.sub-menu > li:hover,
-.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.sub-menu > li:hover a {
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.menu > li > a:hover {
+  background-color: var(--mat-primary);
+  color: var(--mat-white);
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.sub-menu > li:hover,
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.sub-menu > li:hover > a {
   background-color: var(--mat-primary);
   color: var(--mat-white);
 }
@@ -72,21 +75,28 @@
   color: var(--mat-black);
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li:before {
-  display: none;
+  visibility: hidden;
   left: 20px;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li:after {
   right: 20px;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li .sub-menu {
-  display: none;
+  visibility: hidden;
   height: auto;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li .sub-menu a {
   color: var(--mat-black);
 }
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li.mat-submenu-open > .sub-menu {
+  visibility: visible;
+}
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li.menu-item-has-children:after {
+  font-family: FontAwesome;
   content: "\f078";
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li.menu-item-has-children.mat-submenu-open:after {
+  content: "\f053";
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-list ul {
   list-style: none;
@@ -132,110 +142,4 @@
   display: block;
   height: 100%;
   overflow: auto;
-}
-.mat-content .accordions {
-  margin: -2em;
-  padding: 2em;
-  background-color: #e8e8e8;
-}
-.accordions {
-  background-color: transparent;
-}
-.accordions .accordion {
-  background-color: var(--mat-white);
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
-}
-.accordions .accordion .accordion-header {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row;
-  height: 48px;
-  padding-left: 24px;
-  padding-right: 24px;
-  font-size: 16px;
-  border-bottom: 1px solid #e0e0e0;
-}
-.accordions .accordion .accordion-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-.accordions .accordion .accordion-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-.accordions .accordion .accordion-icon::before {
-  content: "\f053";
-}
-.accordions .accordion .accordion-body {
-  height: 0;
-  max-height: 0;
-  padding-left: 24px;
-  padding-right: 24px;
-  visibility: hidden;
-  overflow: hidden;
-}
-.accordions .accordion.opened {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-.accordions .accordion.opened .accordion-header {
-  height: 64px;
-}
-.accordions .accordion.opened .accordion-icon::before {
-  content: "\f078";
-}
-.accordions .accordion.opened .accordion-body {
-  padding-top: 24px;
-  padding-bottom: 24px;
-  visibility: visible;
-  height: auto;
-  max-height: none;
-}
-.accordions .accordion.opened:first-child {
-  margin-top: 0;
-}
-.accordions .accordion.opened:last-child {
-  margin-bottom: 0;
-}
-.accordions .accordion .accordion-header,
-.accordions .accordion .accordion-body {
-  transition-property: all;
-  transition-duration: .4s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-.table-header {
-  height: 64px;
-  line-height: 64px;
-  font-size: 20px;
-}
-table {
-  width: 100%;
-  text-align: left;
-  table-layout: fixed;
-  border-spacing: unset;
-  border-collapse: unset;
-}
-table tr {
-  height: 48px;
-}
-table tr th {
-  color: #868686;
-  border-bottom: 1px solid #e1e1e1;
-}
-table tr td {
-  color: #212121;
-  border-bottom: 1px solid #e1e1e1;
-}
-table tr:first-child {
-  height: 56px;
-}
-table tr:last-child {
-  height: 56px;
-}
-table tr:last-child td {
-  border-bottom: none;
 }

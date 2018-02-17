@@ -10,16 +10,8 @@ jQuery(document).ready(function($) {
     });
 
     // Toggle Sub menu
-    $(".menu-item-has-children").click(function(event){
-        event.preventDefault();
-        if ($(".mat-sidenav").is(":visible")) {
-            
-        }
-        // $(this).css({
-        //     marginBottom: $(".sub-menu").height()
-        // });
-        $(this).toggleClass('mat-open');
-        $(".sub-menu").toggle();
+    $("li.menu-item-has-children").click(function(event){
+        matSubmenuToggle($(this), event);
     });
 
     // Ripple Effect
@@ -33,11 +25,10 @@ jQuery(document).ready(function($) {
     $('.accordion-header').on('click',function(event){
         matAccordionToggle($(this));
     });
-});
 
-function matSubmenuToggle() {
-    
-}
+    // Input
+    matAddInputContainer();
+});
 
 function matRippleEffect(element, event) {
     $('.mat-ripple').remove();
@@ -71,7 +62,13 @@ function matToggleMenu() {
     $(".mat-sidenav").toggleClass('mat-sidenav-closed');
     $(".mat-sidenav").toggleClass('mat-sidenav-opened');
     $(".mat-sidenav-container").toggleClass('mat-sidenav-open');
+}
 
+function matSubmenuToggle(element, event) {
+    console.log($(element).attr('class'));
+    event.preventDefault();
+
+    $(element).toggleClass('mat-submenu-open');
 }
 
 function matAddAccordionIcons() {
@@ -93,4 +90,13 @@ function matAccordionToggle(element) {
 
     // Open accordion
     $(accordion).toggleClass('opened');
+}
+
+// Input
+function matAddInputContainer() {
+    $("input").each(function() {
+        $(this).addClass('mat-input-element');
+        // $(this).wrap('<div class="mat-input-container"></div>');
+    });
+
 }

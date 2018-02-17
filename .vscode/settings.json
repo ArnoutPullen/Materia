@@ -1,0 +1,5 @@
+{
+    "files.exclude": {
+        "framework/css/**.css": true
+    }
+}

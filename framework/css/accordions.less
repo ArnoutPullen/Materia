@@ -1,0 +1,76 @@
+.mat-content .accordions {
+    margin: -2em;
+}
+
+.accordions {
+    background-color: var(--mat-background);
+    padding: 2em;
+    .accordion {
+        background-color: var(--mat-white);
+        box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row;
+            height: 48px;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-size: 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .accordion-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .accordion-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .accordion-icon::before {
+            content: "\f053";
+        }
+        .accordion-body {
+            height: 0;
+            max-height: 0;
+            padding-left: 24px;
+            padding-right: 24px;
+            visibility: hidden;
+            overflow: hidden;
+        }
+        // Open
+        &.opened {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        &.opened .accordion-header {
+            height: 64px;
+        }
+        &.opened .accordion-icon::before {
+            content: "\f078";
+        }
+        &.opened .accordion-body {
+            padding-top: 24px;
+            padding-bottom: 24px;
+            visibility: visible;
+            height: auto;
+            max-height: none;
+        }
+        &.opened:first-child {
+            margin-top: 0;
+        }
+        &.opened:last-child {
+            margin-bottom: 0;
+        }
+        // Animation
+        .accordion-header,
+        .accordion-body {
+            transition-property: all;
+            transition-duration: .4s;
+            transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        }
+    }
+}
