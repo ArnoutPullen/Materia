@@ -24,6 +24,20 @@
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-right {
   right: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-top,
+.mat-sidenav-container .mat-sidenav.mat-sidenav-bottom {
+  left: 0;
+  right: 0;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-top {
+  top: 0;
+  transform: translate3d(0, -100%, 0);
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-bottom {
+  bottom: 0;
+  transform: translate3d(0, 100%, 0);
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-transition {
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -63,7 +77,7 @@
   box-sizing: border-box;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li a {
-  display: block;
+  display: flex;
   padding: 24px 20px;
   color: var(--mat-black);
   text-decoration: none;
@@ -83,13 +97,19 @@
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li .sub-menu {
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
   height: auto;
+  min-height: 64px;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li .sub-menu a {
   color: var(--mat-black);
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li.mat-submenu-open > .sub-menu {
   visibility: visible;
+}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li:not(.mat-submenu-open) {
+  height: 64px;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li.menu-item-has-children:after {
   font-family: FontAwesome;
@@ -125,6 +145,10 @@
   z-index: 2;
   visibility: hidden;
 }
+.mat-sidenav-container .mat-overlay.mat-overlay-visible {
+  visibility: visible;
+  opacity: 1;
+}
 .mat-sidenav-container.mat-sidenav-open .mat-overlay {
   visibility: visible;
   opacity: 1;
@@ -142,4 +166,21 @@
   display: block;
   height: 100%;
   overflow: auto;
+}
+@media screen and (max-width: 768px) {
+  .menu-headmenu-container {
+    overflow: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  body.admin-bar .mat-sidenav-container {
+    top: 32px;
+    max-height: calc(100% - 32px);
+  }
+}
+@media screen and (max-width: 768px) {
+  body.admin-bar .mat-sidenav-container {
+    top: 46px;
+    max-height: calc(100% - 46px);
+  }
 }

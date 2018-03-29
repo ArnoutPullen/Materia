@@ -1,7 +1,3 @@
-<?php
-// Header
-?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -30,6 +26,12 @@
 				<a href="<?php echo get_edit_user_link(); ?>">
 					<span class="mat-user-name"><?php echo $current_user->display_name ?></span>
 				</a>
+				<span class="spacer"></span>
+				<div class="mat-user-logout">
+					<a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+						<button class="mat-button mat-button-flat">Logout</button>
+					</a>
+				</div>
 			</div>
 		<?php } else { ?>
 			<div class="mat-user">
@@ -49,7 +51,7 @@
 			<a href="<?php echo site_url(); ?>/?s"><button class="mat-button mat-icon-button"><i class="material-icons">search</i></button></a>
 		</div>
 		<div class="mat-toolbar">
-			<?php the_title(); ?>
+			<?php do_shortcode( '[title]' ); ?>
 			<div class="mat-spacer"></div>
 			<?php edit_post_link('<button class="mat-button mat-icon-button"><i class="material-icons">edit</i></button>'); ?>
 		</div>

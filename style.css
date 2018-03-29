@@ -13,15 +13,15 @@ Text Domain: materia
 */
 
 
-@import url("./framework/css/accordions.css");
-@import url("./framework/css/buttons.css");
-@import url("./framework/css/cards.css");
-@import url("./framework/css/forms.css");
-@import url("./framework/css/input.css");
-@import url("./framework/css/layouts.css");
-@import url("./framework/css/sidenav.css");
-@import url("./framework/css/tables.css");
-@import url("./framework/css/variables.css");
+@import url("./assets/css/accordions.css");
+@import url("./assets/css/buttons.css");
+@import url("./assets/css/cards.css");
+@import url("./assets/css/forms.css");
+@import url("./assets/css/input.css");
+@import url("./assets/css/layouts.css");
+@import url("./assets/css/sidenav.css");
+@import url("./assets/css/tables.css");
+@import url("./assets/css/variables.css");
 
 /* Body */
 body {
@@ -81,6 +81,7 @@ body {
 .mat-user {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     height: 50px;
     border-top: 1px solid grey;
     padding: 16px;
@@ -123,9 +124,18 @@ body {
     flex-direction: column;
 }
 
-.mat-user-login {
+.mat-user-login,
+.mat-user-logout {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+/* Links */
+a {
+    color: var(--mat-primary);
+}
+a:hover {
+    color: var(--mat-secondary);
 }

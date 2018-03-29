@@ -12,14 +12,17 @@ function render_materia_view( $view ) {
 // theme scripts and stylesheets
 function mat_load_default_style() {
     wp_enqueue_style( 'materia-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'materia-style', get_template_directory_uri() . '/framework/css/materia.css' );
-    wp_enqueue_script( 'materia-script', get_template_directory_uri() . '/framework/js/materia.js' );
+    wp_enqueue_style( 'materia-style', get_template_directory_uri() . '/assets/css/materia.css' );
+    wp_enqueue_script( 'materia-script', get_template_directory_uri() . '/assets/js/materia.js' );
 }
 add_action( 'wp_enqueue_scripts', 'mat_load_default_style' );
 // customizer
 // https://developer.wordpress.org/themes/customize-api/customizer-objects/
 // panel->sections->controls->settings
 function mat_register_customize_settings( $wp_customize ) {
+    $section_id = 1;
+    $menu = new stdClass();
+    $menu->name = 'Test';
     $wp_customize->add_panel( 'settings', array(
         'title' => __('Panel'),
         'description' => 'Description Panel',

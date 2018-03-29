@@ -1,3 +1,6 @@
+
+// Triggers
+
 jQuery(document).ready(function($) {
     // Menu Toggle
     $("#mat-toggle-menu").click(function() {
@@ -10,8 +13,21 @@ jQuery(document).ready(function($) {
     });
 
     // Toggle Sub menu
-    $("li.menu-item-has-children").click(function(event){
-        matSubmenuToggle($(this), event);
+    $("#menu-headmenu > li.menu-item-has-children").click(function(event) {
+        if ($(this).find('.sub-menu').length !== 0) {
+            matSubmenuToggle($(this), event);
+        } else {
+            console.log('no submenu');
+        }   
+    });
+
+    $(".sub-menu > li.menu-item").click(function(event){
+        if ($(this).find('.sub-menu').length !== 0) {
+            matToggleMenu();
+            window.location.href = $(this).find('a').attr('href');
+        } else {
+            console.log('no children');
+        }
     });
 
     // Ripple Effect
@@ -22,13 +38,15 @@ jQuery(document).ready(function($) {
     // Accordions
     matAddAccordionIcons();
 
-    $('.accordion-header').on('click',function(event){
+    $('.accordion-header').on('click',function(event) {
         matAccordionToggle($(this));
     });
 
     // Input
     matAddInputContainer();
 });
+
+// Effect
 
 function matRippleEffect(element, event) {
     $('.mat-ripple').remove();
@@ -57,23 +75,29 @@ function matRippleEffect(element, event) {
     setTimeout(function() { $('.mat-ripple').remove(); }, 1000);
 }
 
+// Menu
+
 function matToggleMenu() {
-    // If opened then close else open
+    console.log('matToggleMenu');
     $(".mat-sidenav").toggleClass('mat-sidenav-closed');
     $(".mat-sidenav").toggleClass('mat-sidenav-opened');
     $(".mat-sidenav-container").toggleClass('mat-sidenav-open');
 }
 
+// Submenu
+
 function matSubmenuToggle(element, event) {
-    console.log($(element).attr('class'));
+    
     event.preventDefault();
 
     $(element).toggleClass('mat-submenu-open');
 }
 
+// Accordions
+
 function matAddAccordionIcons() {
     // Add accordion icon to each accordion
-    $(".accordion").each(function(){
+    $(".accordion").each(function() {
         $(".accordion-header", this).append('<i class="fa accordion-icon" aria-hidden="true"></i>');
     });
 }
@@ -93,6 +117,7 @@ function matAccordionToggle(element) {
 }
 
 // Input
+
 function matAddInputContainer() {
     $("input").each(function() {
         $(this).addClass('mat-input-element');
