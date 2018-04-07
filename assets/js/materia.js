@@ -20,14 +20,8 @@ jQuery(document).ready(function($) {
             console.log('no submenu');
         }   
     });
-
-    $(".sub-menu > li.menu-item").click(function(event){
-        if ($(this).find('.sub-menu').length !== 0) {
-            matToggleMenu();
-            window.location.href = $(this).find('a').attr('href');
-        } else {
-            console.log('no children');
-        }
+    $('#menu-headmenu > li > ul > li').click(function(e) {
+        e.stopPropagation();
     });
 
     // Ripple Effect
@@ -78,7 +72,6 @@ function matRippleEffect(element, event) {
 // Menu
 
 function matToggleMenu() {
-    console.log('matToggleMenu');
     $(".mat-sidenav").toggleClass('mat-sidenav-closed');
     $(".mat-sidenav").toggleClass('mat-sidenav-opened');
     $(".mat-sidenav-container").toggleClass('mat-sidenav-open');

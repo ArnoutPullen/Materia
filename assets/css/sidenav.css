@@ -72,12 +72,12 @@
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li {
   position: relative;
-  height: 64px;
+  min-height: 64px;
   width: 100%;
   box-sizing: border-box;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li a {
-  display: flex;
+  display: block;
   padding: 24px 20px;
   color: var(--mat-black);
   text-decoration: none;
@@ -97,10 +97,7 @@
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li .sub-menu {
   visibility: hidden;
-  display: flex;
-  flex-direction: column;
   height: auto;
-  min-height: 64px;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li .sub-menu a {
   color: var(--mat-black);
