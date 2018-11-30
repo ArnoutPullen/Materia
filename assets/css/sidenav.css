@@ -6,7 +6,7 @@
 }
 .mat-sidenav-container .mat-sidenav {
   position: absolute;
-  background-color: var(--mat-white);
+  background-color: var(--mat-background-color);
   z-index: 3;
   visibility: hidden;
 }
@@ -56,10 +56,7 @@
 .mat-sidenav-container .mat-sidenav.mat-sidenav-closed {
   visibility: hidden;
 }
-.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.menu > li > a:hover {
-  background-color: var(--mat-primary);
-  color: var(--mat-white);
-}
+.mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.menu > li:hover > a,
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.sub-menu > li:hover,
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul.sub-menu > li:hover > a {
   background-color: var(--mat-primary);
@@ -79,14 +76,14 @@
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li a {
   display: block;
   padding: 24px 20px;
-  color: var(--mat-black);
+  color: var(--mat-text-color);
   text-decoration: none;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li:before,
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li:after {
   position: absolute;
   top: 20px;
-  color: var(--mat-black);
+  color: var(--mat-text-color);
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li:before {
   visibility: hidden;
@@ -100,7 +97,7 @@
   height: auto;
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li .sub-menu a {
-  color: var(--mat-black);
+  color: var(--mat-text-color);
 }
 .mat-sidenav-container .mat-sidenav.mat-sidenav-block ul > li.mat-submenu-open > .sub-menu {
   visibility: visible;
@@ -123,7 +120,7 @@
 .mat-sidenav-container .mat-sidenav.mat-sidenav-list ul li a {
   display: block;
   padding: 15px 0 15px 22px;
-  color: var(--mat-black);
+  color: var(--mat-text-color);
   font-weight: 700;
   text-decoration: none;
 }

@@ -26,7 +26,8 @@ Text Domain: materia
 /* Body */
 body {
     font-family: Roboto,"Helvetica Neue",sans-serif;
-    background-color: #e8e8e8;
+    background-color: var(--mat-background-color);
+    color: var(--mat-text-color);
     margin: 0;
     padding: 0;
 }
@@ -54,7 +55,8 @@ body {
 }
 .mat-content {
     padding: 2em;
-    background-color: var(--mat-white);
+    background-color: var(--mat-content-background-color);
+    color: var(--mat-text-color);
 }
 
 /* Ripple Effect */
@@ -134,8 +136,8 @@ body {
 
 /* Links */
 a {
-    color: var(--mat-primary);
+    color: var(--mat-link-color);
 }
 a:hover {
-    color: var(--mat-secondary);
+    color: var(--mat-link-hover-color);
 }

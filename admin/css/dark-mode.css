@@ -1,0 +1,101 @@
+:root {
+    --mat-border-color: #2f2f2f;
+    --mat-menu-background-color: #1c1c1c;
+}
+
+/* Content */
+#wpwrap, #wpcontent, #wpfooter {
+    background-color: var(--mat-background-color);
+}
+
+/* Menu */
+#adminmenu, #adminmenuback, #adminmenuwrap, #wpadminbar {
+    background-color: var(--mat-menu-background-color)!important;
+}
+#adminmenu .wp-submenu {
+    background-color: var(--mat-border-color)!important;
+}
+ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:after {
+    border-right-color: var(--mat-background-color);
+}
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu {
+    background-color: var(--mat-primary);
+    color: var(--mat-text-color);
+}
+
+#screen-meta,
+.comment-ays, .feature-filter, .imgedit-group, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat,
+.plugins .active td, .plugins .active th, .plugins tr {
+    background: var(--mat-content-background-color)!important;
+    background-color: var(--mat-content-background-color)!important;
+}
+table, #menu-management .menu-edit, #menu-settings-column .accordion-container, .comment-ays, .feature-filter, .imgedit-group, .manage-menus, .menu-item-handle, .popular-tags, .stuffbox, .widget-inside, .widget-top, .widgets-holder-wrap, .wp-editor-container, p.popular-tags,
+table.widefat,
+.widefat tfoot td, .widefat tfoot th,
+.widefat thead td, .widefat thead th,
+#screen-meta {
+    border-color: var(--mat-border-color)!important;
+}
+.plugin-install #the-list td, .plugins .active td, .plugins .active th, .plugins .inactive td, .plugins .inactive th, .upgrade .plugins td, .upgrade .plugins th {
+    box-shadow: unset!important;
+}
+
+/* Notifications */
+.notice, div.error, div.updated {
+    background-color: var(--mat-content-background-color)!important;
+    color: var(--mat-text-color);
+}
+
+/* Gutenberg */
+.try-gutenberg-panel, .welcome-panel,
+.postbox {
+    background-color: var(--mat-content-background-color);
+    border-color: var(--mat-border-color);
+}
+.try-gutenberg-panel, .welcome-panel a,
+.try-gutenberg-panel, .welcome-panel p,
+.try-gutenberg-panel, .welcome-panel h2,
+.try-gutenberg-panel, .welcome-panel h3,
+.postbox span,
+.postbox a,
+.postbox h3 {
+    color: var(--mat-text-color);
+}
+
+/* Elements */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--mat-heading-color);
+}
+body, div, p, span, strong,
+table, tr, th, td {
+    color: var(--mat-text-color)!important;
+}
+a {
+    color: var(--mat-primary);
+}
+a:active, a:hover {
+    color: var(--mat-secondary)!important;
+}
+
+input[type=text], input[type=search], input[type=radio], input[type=tel], input[type=time], input[type=url], input[type=week], input[type=password], input[type=checkbox], input[type=color], input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], select, textarea {
+    background-color: var(--mat-content-background-color);
+    border-color: var(--mat-border-color);
+    color: var(--mat-text-color);
+}
+
+/* Buttons */
+.wp-core-ui .button-secondary:focus, .wp-core-ui .button-secondary:hover, .wp-core-ui .button.focus, .wp-core-ui .button.hover, .wp-core-ui .button:focus, .wp-core-ui .button:hover {
+    background-color: transparent!important;
+    border-color: var(--mat-border-color)!important;
+    color: var(--mat-text-color)!important;
+}
+#contextual-help-link-wrap, #screen-options-link-wrap,
+.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active,
+.wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary,
+.wp-core-ui .button-secondary:focus, .wp-core-ui .button-secondary:hover, .wp-core-ui .button.focus, .wp-core-ui .button.hover, .wp-core-ui .button:focus, .wp-core-ui .button:hover {
+    background: var(--mat-content-background-color)!important;
+    background-color: var(--mat-content-background-color)!important;
+    border-color: var(--mat-border-color)!important;
+    color: var(--mat-text-color)!important;
+    box-shadow: unset;
+}

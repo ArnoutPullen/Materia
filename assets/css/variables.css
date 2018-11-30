@@ -19,11 +19,7 @@
     --mat-brown: #5D4037;
     --mat-grey: #9E9E9E;
     --mat-bluegrey: #455A64;
-    
     --mat-white: #FFFFFF;
     --mat-black: #212121;
     --mat-background: #e8e8e8;
-
-    --mat-primary: var(--mat-indigo);
-    --mat-secondary: var(--mat-lightblue);
 }

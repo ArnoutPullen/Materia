@@ -2,7 +2,11 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<title><?php wp_title(); ?></title>
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#448AFF">
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -15,33 +19,11 @@
 <body <?php body_class(); ?>>
 <div class="mat-sidenav-container">
 	<div class="mat-overlay"></div>
-	<header class="mat-sidenav mat-sidenav-left mat-sidenav-block mat-sidenav-transition mat-sidenav-closed">
+	<header class="mat-sidenav mat-sidenav-<?php echo get_theme_mod( 'sidenav_position', 'left' ); ?> mat-sidenav-<?php echo get_theme_mod( 'sidenav_layout', 'block' ); ?> mat-sidenav-transition mat-sidenav-closed">
 		<div class="mat-toolbar"><?php echo bloginfo();?></div>
-		<?php wp_nav_menu(); ?>
+		<?php mat_get_view( 'nav-menu' ); ?>
 		<div class="spacer"></div>
-		<?php if ( is_user_logged_in() ) { ?>
-			<div class="mat-user">
-				<?php $current_user = wp_get_current_user(); ?>
-				<span class="mat-user-image"><?php echo get_avatar( $current_user->ID ) ?></span>
-				<a href="<?php echo get_edit_user_link(); ?>">
-					<span class="mat-user-name"><?php echo $current_user->display_name ?></span>
-				</a>
-				<span class="spacer"></span>
-				<div class="mat-user-logout">
-					<a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
-						<button class="mat-button mat-button-flat">Logout</button>
-					</a>
-				</div>
-			</div>
-		<?php } else { ?>
-			<div class="mat-user">
-				<div class="mat-user-login">
-					<a href="<?php echo wp_login_url( get_permalink() ); ?>" title="Login">
-						<button class="mat-button mat-button-flat">Login</button>
-					</a>
-				</div>
-			</div>
-		<?php } ?>
+		<?php mat_get_view( 'user-card' ); ?>
 	</header>
 	<div class="mat-sidenav-content">
 		<div class="mat-toolbar">
@@ -55,4 +37,3 @@
 			<div class="mat-spacer"></div>
 			<?php edit_post_link('<button class="mat-button mat-icon-button"><i class="material-icons">edit</i></button>'); ?>
 		</div>
-		<div class="mat-content">
