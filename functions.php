@@ -32,6 +32,10 @@ include( 'partials/colors.php' );
 include( 'partials/sidenav.php' );
 include( 'partials/dark-mode.php' );
 
+/**
+ * Include shortcodes
+ */
+include_once( 'includes/shortcodes/theme-shortcodes.php' );
 
 function mat_get_view( $slug, $name = null ) {
     if ( isset( $name ) ) {
@@ -81,6 +85,9 @@ function mat_admin_head() {
 
             --mat-link-color: <?php echo get_theme_mod( 'colors_link' ); ?>;
             --mat-link-hover-color: <?php echo get_theme_mod( 'dark_mode_link_hover_color', '#888888' ); ?>;
+        }
+        body.mat-dark-mode :root {
+            --test: black;
         }
     </style><?php
 }
