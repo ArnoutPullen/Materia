@@ -157,9 +157,9 @@
 .mat-sidenav-container .mat-sidenav-content {
   position: relative;
   transform: translate3d(0, 0, 0);
-  display: block;
   height: 100%;
-  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 @media screen and (max-width: 768px) {
   .menu-headmenu-container {
