@@ -21,9 +21,9 @@
 	<div class="mat-overlay"></div>
 	<header class="mat-sidenav mat-sidenav-<?php echo get_theme_mod( 'sidenav_position', 'left' ); ?> mat-sidenav-<?php echo get_theme_mod( 'sidenav_layout', 'block' ); ?> mat-sidenav-transition mat-sidenav-closed">
 		<div class="mat-toolbar"><?php echo bloginfo();?></div>
-		<?php mat_get_view( 'nav-menu' ); ?>
+		<?php mat_get_view( 'nav-menu', 'sidenav' ); ?>
 		<div class="spacer"></div>
-		<?php mat_get_view( 'user-card' ); ?>
+		<?php mat_get_view( 'user-card', 'sidenav' ); ?>
 	</header>
 	<div class="mat-sidenav-content">
 		<div class="mat-toolbar">
