@@ -1,7 +1,7 @@
 <?php
 
-render_materia_view( 'header' );
+mat_get_view( 'header' );
 
-render_materia_view( 'loop' );
+mat_get_view( 'content', 'loop' );
 
-render_materia_view( 'footer' );
+mat_get_view( 'footer' );

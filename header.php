@@ -1,3 +1,3 @@
 <?php
 
-render_materia_view( 'header' );
+mat_get_view( 'header' );

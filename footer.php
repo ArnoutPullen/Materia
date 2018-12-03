@@ -1,3 +1,3 @@
 <?php
 
-render_materia_view( 'footer' );
+mat_get_view( 'footer' );

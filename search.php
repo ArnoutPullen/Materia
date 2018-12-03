@@ -1,7 +1,7 @@
 <?php
 
-render_materia_view( 'header' );
+mat_get_view( 'header' );
 
 ?>Zoeken<?php
 
-render_materia_view( 'footer' );
+mat_get_view( 'footer' );

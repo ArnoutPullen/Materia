@@ -58,11 +58,6 @@ function mat_admin_log( $message ) {
     }
 }
 
-// render theme views
-function render_materia_view( $view ) {
-    // get_template_part( 'template-parts' . $view );
-    include( get_template_directory() . '/framework/views/' . $view . '.php' );
-}
 // theme scripts and stylesheets
 function mat_load_default_style() {
     wp_enqueue_style( 'materia-style', get_stylesheet_uri() );
