@@ -1,7 +1,10 @@
 /* Buttons */
 .mat-button {
     position: relative;
+    display: inline-block;
+    text-align: center;
     text-transform: uppercase;
+    text-decoration: none;
     overflow: hidden;
     outline: none;
     cursor: pointer;
@@ -14,11 +17,16 @@
     &.mat-button-flat {
         min-width: 64px;
         height: 36px;
+        line-height: 36px;
         padding: 0 16px;
         margin: 0 8px;
         border: 0;
-        border-radius: 2px;
+        border-radius: 4px;
         text-transform: uppercase;
+    }
+    &.mat-button-raised:hover,
+    &.mat-button-flat:hover {
+        background: whitesmoke;
     }
     // Raised
     &.mat-button-raised {
