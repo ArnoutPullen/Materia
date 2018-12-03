@@ -5,9 +5,7 @@ function mat_shortcode_get_title() {
         return get_post_type_object( $post->post_type )->labels->name;
     } elseif ( is_page() ) {
         return the_title();
-    } elseif ( is_category() ) {
-        echo 'category';
-    } elseif ( is_tax() ) {
+    } elseif ( is_tax() || is_category() ) {
         $queried_object = get_queried_object();
         $taxonomy = get_taxonomy( $queried_object->taxonomy );
         return $taxonomy->labels->name;
@@ -17,8 +15,8 @@ function mat_shortcode_get_title() {
         return wp_title( '' );
     } else {
         $object = get_queried_object();
-        if (!empty($object)) {
-            if (isset($object->post_title)) {
+        if ( !empty( $object ) ) {
+            if ( isset( $object->post_title ) ) {
                 return $object->post_title;
             }
         }
