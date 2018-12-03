@@ -6,7 +6,7 @@ get_header();
 
 get_search_form();
 
-mat_get_view( get_theme_mod( 'template_search', 'search' ), 'loop' );
+mat_get_view( 'search', 'loop' );
 
 ?></div><?php
 

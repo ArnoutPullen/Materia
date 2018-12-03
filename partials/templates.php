@@ -29,7 +29,7 @@ function mat_customize_register_templates( $wp_customize ) {
 
     // Front Page
     $wp_customize->add_setting( 'template_front_page', array(
-        'default'       => 'cards',
+        'default'       => 'content',
     ) );
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'template_front_page', 
         array(
@@ -99,19 +99,6 @@ function mat_customize_register_templates( $wp_customize ) {
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'template_comments', 
         array(
             'label'      => __( 'Comments', MAT_SLUG ),
-            'section'    => 'templates',
-            'type'       => 'select',
-            'choices'    => $templates
-        ) ) 
-    );
-
-    // Search
-    $wp_customize->add_setting( 'template_search', array(
-        'default'       => 'content',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'template_search', 
-        array(
-            'label'      => __( 'Search', MAT_SLUG ),
             'section'    => 'templates',
             'type'       => 'select',
             'choices'    => $templates
