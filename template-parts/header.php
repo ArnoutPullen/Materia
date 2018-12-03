@@ -30,7 +30,7 @@
 			<button id="mat-toggle-menu" class="mat-button mat-icon-button"><i class="material-icons">menu</i></button>
 			<a href="<?php echo site_url(); ?>"class="mat-site-title"><?php echo bloginfo();?></a>
 			<div class="mat-spacer"></div>
-			<a href="<?php echo site_url(); ?>/?s"><button class="mat-button mat-icon-button"><i class="material-icons">search</i></button></a>
+			<a href="<?php echo get_search_link(); ?>/?s"><button class="mat-button mat-icon-button"><i class="material-icons">search</i></button></a>
 		</div>
 		<div class="mat-toolbar">
 			<?php do_shortcode( '[title]' ); ?>

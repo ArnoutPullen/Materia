@@ -104,5 +104,18 @@ function mat_customize_register_templates( $wp_customize ) {
             'choices'    => $templates
         ) ) 
     );
+
+    // Search
+    $wp_customize->add_setting( 'template_search', array(
+        'default'       => 'content',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'template_search', 
+        array(
+            'label'      => __( 'Search', MAT_SLUG ),
+            'section'    => 'templates',
+            'type'       => 'select',
+            'choices'    => $templates
+        ) ) 
+    );
 }
 add_action( 'customize_register', 'mat_customize_register_templates' );
