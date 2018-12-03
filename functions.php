@@ -30,6 +30,7 @@ remove_filter( 'the_excerpt', 'wpautop' );
  */
 include( 'partials/colors.php' );
 include( 'partials/sidenav.php' );
+include( 'partials/templates.php' );
 include( 'partials/dark-mode.php' );
 
 /**
@@ -37,11 +38,23 @@ include( 'partials/dark-mode.php' );
  */
 include_once( 'includes/shortcodes/theme-shortcodes.php' );
 
-function mat_get_view( $slug, $name = null ) {
-    if ( isset( $name ) ) {
-        get_template_part( 'template-parts/' . $slug );
+function mat_get_view( $file, $folder = null, $third = null ) {
+    $prefix = 'template-parts/';
+    if ( !empty( $folder ) && !empty( $third ) ) {
+        mat_admin_log( $prefix . $folder . '/' . $file . ' ' . $third );
+        get_template_part( $prefix . $folder . '/' . $file, $third );
+    } elseif ( !empty( $folder ) && empty( $third ) ) {
+        mat_admin_log( $prefix . $folder . '/' . $file );
+        get_template_part( $prefix . $folder . '/' . $file );
     } else {
-        get_template_part( 'template-parts/' . $slug, $name );
+        mat_admin_log( $prefix . $file );
+        get_template_part( $prefix . $file );
+    }
+}
+
+function mat_admin_log( $message ) {
+    if ( is_user_logged_in() ) {
+        echo $message . '<br>';
     }
 }
 
@@ -53,7 +66,6 @@ function render_materia_view( $view ) {
 // theme scripts and stylesheets
 function mat_load_default_style() {
     wp_enqueue_style( 'materia-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'materia-style', get_template_directory_uri() . '/assets/css/materia.css' );
     wp_enqueue_script( 'materia-script', get_template_directory_uri() . '/assets/js/materia.js' );
 }
 add_action( 'wp_enqueue_scripts', 'mat_load_default_style' );
