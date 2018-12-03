@@ -24,7 +24,6 @@
   border-radius: 4px;
   text-transform: uppercase;
 }
-.mat-button.mat-button-raised:hover,
 .mat-button.mat-button-flat:hover {
   background: whitesmoke;
 }
